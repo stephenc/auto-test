@@ -85,8 +85,9 @@ jobs:
       - name: Fake artifact
         run: |
           date > foo.txt
-          zip -c foo.zip foo.txt
-
+      - name: Create Archive
+        run: |
+          Compress-Archive -LiteralPath foo.txt -DestinationPath foo
       - name: Upload Release Asset
         id: upload-release-asset 
         uses: actions/upload-release-asset@v1
