@@ -30,7 +30,7 @@ jobs:
       - name: Share upload URL
         uses: actions/upload-artifact@v1
         with:
-          name: release-upload-url
+          name: release-upload-url.txt
           path: release-upload-url.txt
 
   unix:
@@ -43,7 +43,7 @@ jobs:
       - name: Pick up upload URL
         uses: actions/download-artifact@v1
         with:
-          name: release-upload-url
+          name: release-upload-url.txt
       - name: Export Upload URL
         run: |
           ls -l
@@ -76,7 +76,7 @@ jobs:
       - name: Pick up upload URL
         uses: actions/download-artifact@v1
         with:
-          name: release-upload-url
+          name: release-upload-url.txt
       - name: Export Upload URL
         run: |
           type release-upload-url.txt
