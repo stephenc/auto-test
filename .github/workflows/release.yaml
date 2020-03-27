@@ -58,7 +58,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          upload_url: ${{ senv.release_upload_url }} 
+          upload_url: ${{ env.release_upload_url }} 
           asset_path: ./foo.tar.gz
           asset_name: foo.tar.gz
           asset_content_type: application/tar+gzip   
