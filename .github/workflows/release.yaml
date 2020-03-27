@@ -78,8 +78,8 @@ jobs:
           name: release-upload-url
       - name: Export Upload URL
         run: |
-          cat release-upload-url\release-upload-url.txt
-          del /q /s release-upload-url
+          cat release-upload-url/release-upload-url.txt
+          rm -rf release-upload-url/
 
       - name: Fake artifact
         run: |
