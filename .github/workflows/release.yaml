@@ -85,6 +85,7 @@ jobs:
       - name: Fake artifact
         run: |
           date > foo.txt
+          zip -c foo.zip foo.txt
 
       - name: Upload Release Asset
         id: upload-release-asset 
@@ -93,6 +94,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ env.release_upload_url }} 
-          asset_path: ./foo.txt
-          asset_name: foo.txt
-          asset_content_type: text/plain   
+          asset_path: ./foo.zip
+          asset_name: foo.zip
+          asset_content_type: application/zip   
