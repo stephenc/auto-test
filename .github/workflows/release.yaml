@@ -46,6 +46,7 @@ jobs:
           name: release-upload-url
       - name: Export Upload URL
         run: |
+        ls -l
           cat release-upload-url.txt
           rm release-upload-url.txt
 
@@ -66,7 +67,7 @@ jobs:
           asset_content_type: application/tar+gzip   
 
   windows:
-    name: Upload Unix artifacts
+    name: Upload Windows artifacts
     needs: [prepare]
     runs-on: windows-latest
     steps:
