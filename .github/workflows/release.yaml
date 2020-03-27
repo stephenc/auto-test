@@ -25,7 +25,8 @@ jobs:
           draft: true
           prerelease: false
       - name: Record upload URL
-        run: echo "::set-env name==release_upload_url::${{ steps.create_release.outputs.upload_url }}" > release-upload-url.txt
+        run: |
+          echo "::set-env name==release_upload_url::${{ steps.create_release.outputs.upload_url }}" > release-upload-url.txt
       - name: Share upload URL
         uses: actions/upload-artifact@v1
         with:
@@ -34,7 +35,7 @@ jobs:
 
   unix:
     name: Upload Unix artifacts
-    needs: prepare
+    needs: [prepare]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -66,7 +67,7 @@ jobs:
 
   windows:
     name: Upload Unix artifacts
-    needs: prepare
+    needs: [prepare]
     runs-on: windows-latest
     steps:
       - name: Checkout code
