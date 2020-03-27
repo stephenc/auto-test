@@ -46,7 +46,7 @@ jobs:
           name: release-upload-url
       - name: Export Upload URL
         run: |
-        ls -l
+          ls -l
           cat release-upload-url.txt
           rm release-upload-url.txt
 
