@@ -30,7 +30,7 @@ jobs:
       - name: Share upload URL
         uses: actions/upload-artifact@v1
         with:
-          name: release-upload-url.txt
+          name: release-upload-url
           path: release-upload-url.txt
 
   unix:
@@ -43,12 +43,11 @@ jobs:
       - name: Pick up upload URL
         uses: actions/download-artifact@v1
         with:
-          name: release-upload-url.txt
+          name: release-upload-url
       - name: Export Upload URL
         run: |
-          ls -l
-          cat release-upload-url.txt
-          rm release-upload-url.txt
+          cat release-upload-url/release-upload-url.txt
+          rm -rf release-upload-url/
 
       - name: Fake artifact
         run: |
@@ -76,11 +75,11 @@ jobs:
       - name: Pick up upload URL
         uses: actions/download-artifact@v1
         with:
-          name: release-upload-url.txt
+          name: release-upload-url
       - name: Export Upload URL
         run: |
-          type release-upload-url.txt
-          del release-upload-url.txt
+          type release-upload-url\release-upload-url.txt
+          del /q /s release-upload-url
 
       - name: Fake artifact
         run: |
