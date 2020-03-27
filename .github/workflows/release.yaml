@@ -34,6 +34,7 @@ jobs:
 
   unix:
     name: Upload Unix artifacts
+    needs: prepare
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
